@@ -316,7 +316,6 @@ No Body
   "message": "La longitud del campo imei debe ser de 15 caracteres"
 }
 ```
----
 # Inventario
 ## `GET` /inventario/busqueda/imeis
 
