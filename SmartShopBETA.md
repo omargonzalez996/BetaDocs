@@ -313,11 +313,12 @@ No Body
 {
   "code": 21,
   "data": "error",
-  "message": "La longitud del campo imei debe ser de 15 caracteres"
+  "message": "La longitud del campo imei debe ser de 15 caracteres :)"
 }
 ```
 
 # Inventario
+
 ## `GET` /inventario/busqueda/imeis
 
 >Busca una factura asociada al imei proporcionado y muestra todos sus detalles.
