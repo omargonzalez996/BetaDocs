@@ -317,10 +317,6 @@ No Body
 }
 ```
 
-
-
-
-
 # Inventario
 
 ## `GET` /inventario/busqueda/imeis
@@ -504,35 +500,36 @@ No Body
 
 ```json
 {
-  "code": 0,
-  "data": [
-	  {
-      "producto_id": 2569,
-      "codigo": "REDMI105G4/64LB",
-      "marca": "XIAOMI",
-      "modelo": "REDMI 10 5G 4/64 GB",
-      "categoria": "Teléfono",
-      "color": "PLATA",
-      "cantidad": 1,
-      "imeis_registrados": 0,
-      "imei": null
-    },
-     {
-      "producto_id": 2326,
-      "codigo": "MOTOE1364GBLB",
-      "marca": "MOTOROLA",
-      "modelo": "MOTO E13 2/64GB",
-      "categoria": "Teléfono",
-      "color": "Blanco",
-      "cantidad": 5,
-      "imeis_registrados": 2,
-      "imei": [
-	      "712309865720008",
-	      "712309865720009"
-      ]
-    }
-  ],
+	"code": 0,
+	"data": [
+		{
+			"producto_id": 2569,
+			"codigo": "REDMI105G4/64LB",
+			"marca": "XIAOMI",
+			"modelo": "REDMI 10 5G 4/64 GB",
+			"categoria": "Teléfono",
+			"color": "PLATA",
+			"cantidad": 1,
+			"imeis_registrados": 0,
+			"imei": null
+	    },
+	    {
+		    "producto_id": 2326,
+		    "codigo": "MOTOE1364GBLB",
+		    "marca": "MOTOROLA",
+		    "modelo": "MOTO E13 2/64GB",
+		    "categoria": "Teléfono",
+		    "color": "Blanco",
+		    "cantidad": 5,
+		    "imeis_registrados": 2,
+		    "imei": [
+			    "712309865720008",
+			    "712309865720009"
+			]
+		}
+	],
   "message": "Petición realizada exitosamente"
+}
 ```
 
 #### Respuestas de error
@@ -604,50 +601,29 @@ No Body
 ```json
 {
   "code": 0,
-  "data": [
-	  {
-      "producto_id": 2569,
-      "codigo": "REDMI105G4/64LB",
-      "marca": "XIAOMI",
-      "modelo": "REDMI 10 5G 4/64 GB",
-      "categoria": "Teléfono",
-      "color": "PLATA",
-      "cantidad": 1,
-      "imeis_registrados": 0,
-      "imei": null
-    },
-     {
-      "producto_id": 2326,
-      "codigo": "MOTOE1364GBLB",
-      "marca": "MOTOROLA",
-      "modelo": "MOTO E13 2/64GB",
-      "categoria": "Teléfono",
-      "color": "Blanco",
-      "cantidad": 5,
-      "imeis_registrados": 2,
-      "imei": [
-	      "712309865720008",
-	      "712309865720009"
-      ]
-    },
-    {...},
-    ...
-  ],
-  "message": "Petición realizada exitosamente"
+  "data": {
+    "0": "123123123123121",
+    "1": "123123123123122"
+  },
+  "message": "IMEIs insertados exitosamente"
+}
 ```
 
 #### Respuestas de error
 
-**Condición** : `el personalventa no tiene productos`
+**Condición** : `imeis ya registrados en la base de datos`
 
 **Código** : `200 Ok`
 
 **Contenido** : 
 ```json
 {
-  "code": 23,
-  "data": "S/R",
-  "message": "Petición obtener personal venta sin resultados"
+  "code": 29,
+  "data": [
+    "El IMEI 123123123123101 pertenece a Personal Almacen",
+    "El IMEI 123123123123102 pertenece a Personal Almacen"
+  ],
+  "message": "IMEI's registrados en BD"
 }
 ```
 
@@ -668,3 +644,139 @@ No Body
 
 
 
+
+## `GET` /producto/listar/movimientoimei #incompleto
+
+>Lista los productos de un personalventa con la cantidad actual y la cantidad de imeis registrados.
+
+**URL** : `https://pruebasmorpheus.com:19000/producto/listar/movimientoimei
+
+**Method**: `GET`
+
+**Headers**: 
+
+```json
+{
+    "tipomovimientoinventario_id": "[entero][>0]"
+    "personalventa_id": "[entero][>0]"
+}
+```
+
+**Body**:
+```json
+{
+  "fecha_inicio": "2023-12-01",
+  "fecha_final": "2024-01-30"
+}
+```
+
+#### Respuesta Exitosa
+
+**Condición** : `Si todo salió bien.`
+
+**Code** : `200 OK`
+
+**Contenido**
+
+```json
+{
+//falta
+}
+```
+
+#### Respuestas de error
+
+**Condición** : `imeis ya registrados en la base de datos`
+
+**Código** : `200 Ok`
+
+**Contenido** : 
+```json
+{
+//falta
+}
+```
+
+**Condición** : `formato incorrecto de personalventa_id`
+
+**Código** : `400 Bad Request`
+
+**Contenido** : 
+```json
+{
+//falta
+}
+```
+
+## `PUT` /producto/descuento/inventario
+
+>Descuenta cantidad de inventario de un producto
+
+**URL** : `https://pruebasmorpheus.com:19000/producto/descuento/inventario
+
+**Method**: `PUT`
+
+**Headers**: 
+
+```json
+{ 
+	inventario_id: 32729, //[entero][>0]
+	producto_id: 2671, //[entero][>0]
+	personalventa_id: 59, //[entero][>0]
+	tipomovimientoinventario_id: 4, //[entero][>0]
+	permiso_usuario: "superadministrador" //['normal' || 'administrador' || 'superadministrador']
+}
+```
+
+**Body**:
+```json
+{ 
+	"cantidad": 1, 
+	"clave": 8273, 
+	"oldImei": [ 712309865720001 ] 
+}
+```
+
+#### Respuesta Exitosa
+
+**Condición** : `Si todo salió bien.`
+
+**Code** : `200 OK`
+
+**Contenido**
+
+```json
+{
+	"code": 0,
+	"data": [],
+	"message": "Petición realizada exitosamente"
+}
+```
+
+#### Respuestas de error
+
+**Condición** : `Error en el proceso`
+
+**Código** : `400 Bad Request`
+
+**Contenido** : 
+```json
+{
+  "code": 29,
+  "data": ["S/R"],
+  "message": "Error peticion obtener movimientos de imeis"
+}
+```
+
+**Condición** : `formato incorrecto de personalventa_id`
+
+**Código** : `400 Bad Request`
+
+**Contenido** : 
+```json
+{
+	"code": 23,
+	"data": "S/R",
+	"message": "Petición obtener personal venta sin resultados"
+}
+```
