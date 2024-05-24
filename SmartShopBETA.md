@@ -317,6 +317,10 @@ No Body
 }
 ```
 
+
+
+
+
 # Inventario
 
 ## `GET` /inventario/busqueda/imeis
@@ -463,6 +467,10 @@ No Body
   "message": "El campo personalventa_id debe contener solo números"
 }
 ```
+
+
+
+
 # Producto
 ## `GET` /producto/listar/imeifaltante
 
@@ -655,3 +663,8 @@ No Body
   "message": "El campo personalventa_id debe contener solo números"
 }
 ```
+
+
+
+
+
