@@ -847,7 +847,7 @@ noHeaders
 {
   "code": 29,
   "data": ["S/R"],
-  "message": "Error peticion obtener movimientos de imeis"
+  "message": "Error de petición"
 }
 ```
 
@@ -860,7 +860,7 @@ noHeaders
 {
 	"code": 23,
 	"data": "S/R",
-	"message": "Petición obtener personal venta sin resultados"
+	"message": "el campo array_datos debe ser un array"
 }
 ```
 
