@@ -782,13 +782,13 @@ No Body
 ```
 
 
-# `PUT` /producto/insert/productoAccesorio
+# `POST` /producto/insert/productoAccesorio
 
 >Agrega un accesorio
 
 **URL** : `https://pruebasmorpheus.com:19000/producto/insert/productoAccesorio
 
-**Method**: `PUT`
+**Method**: `POST`
 
 **Headers**: 
 
