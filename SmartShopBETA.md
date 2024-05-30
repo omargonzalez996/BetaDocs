@@ -813,7 +813,7 @@ noHeaders
 		decripcion: "String"
 	},
 	imagen: {
-		identificador: ["1/0"], //1 para imagen principal 2 para secundaria
+		identificador: ["1/0"], //0 para imagen principal 1 para secundaria
 		nombre: "String",
 		buffer: "StringBase64"
 	}
