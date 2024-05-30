@@ -780,3 +780,87 @@ No Body
 	"message": "Petición obtener personal venta sin resultados"
 }
 ```
+
+
+# `PUT` /producto/insert/productoAccesorio
+
+>Agrega un accesorio
+
+**URL** : `https://pruebasmorpheus.com:19000/producto/insert/productoAccesorio
+
+**Method**: `PUT`
+
+**Headers**: 
+
+```json
+noHeaders
+```
+
+**Body**:
+```json
+{
+	codigo: "String", 
+	categoria: "String", 
+	marca: "String", 
+	modelo: "String", 
+	precioVentaMax: Int, 
+	precioVentaMin: int,
+	precioFactura: Int, 
+	precioSubdistribuidor: Int, 
+	precioMayorista: Int, 
+	caracteristica: {
+		id: Int,
+		decripcion: "String"
+	},
+	imagen: {
+		identificador: [1/0], //1 para imagen principal 2 para secundaria
+		nombre: "String", 
+		buffer: "StringBase64"
+	}
+}
+```
+
+#### Respuesta Exitosa
+
+**Condición** : `Si todo salió bien.`
+
+**Code** : `200 OK`
+
+**Contenido**
+
+```json
+{
+	"code": 0,
+	"data": [],
+	"message": "Petición realizada exitosamente"
+}
+```
+
+#### Respuestas de error
+
+**Condición** : `Error en el proceso`
+
+**Código** : `400 Bad Request`
+
+**Contenido** : 
+```json
+{
+  "code": 29,
+  "data": ["S/R"],
+  "message": "Error peticion obtener movimientos de imeis"
+}
+```
+
+**Condición** : `formato incorrecto de personalventa_id`
+
+**Código** : `400 Bad Request`
+
+**Contenido** : 
+```json
+{
+	"code": 23,
+	"data": "S/R",
+	"message": "Petición obtener personal venta sin resultados"
+}
+```
+
