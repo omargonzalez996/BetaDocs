@@ -803,9 +803,9 @@ noHeaders
 	categoria: "String", 
 	marca: "String", 
 	modelo: "String", 
-	precioVentaMax: Int, 
+	precioVentaMax: Int,
 	precioVentaMin: int,
-	precioFactura: Int, 
+	precioFactura: Int,
 	precioSubdistribuidor: Int, 
 	precioMayorista: Int, 
 	caracteristica: {
@@ -813,8 +813,8 @@ noHeaders
 		decripcion: "String"
 	},
 	imagen: {
-		identificador: [1/0], //1 para imagen principal 2 para secundaria
-		nombre: "String", 
+		identificador: ["1/0"], //1 para imagen principal 2 para secundaria
+		nombre: "String",
 		buffer: "StringBase64"
 	}
 }
@@ -831,7 +831,12 @@ noHeaders
 ```json
 {
 	"code": 0,
-	"data": [],
+	"data": {
+		categoria_id: 1,
+		marca_id: 1,
+		modelo_id: 1,
+		producto_id: 1
+	},
 	"message": "Petición realizada exitosamente"
 }
 ```
