@@ -782,7 +782,7 @@ No Body
 ```
 
 
-# `POST` /producto/insert/productoAccesorio
+## `POST` /producto/insert/productoAccesorio
 
 >Agrega un accesorio
 
@@ -851,7 +851,7 @@ noHeaders
 }
 ```
 
-**Condición** : `formato incorrecto de personalventa_id`
+**Condición** : `formato incorrecto de caracteristica.id`
 
 **Código** : `400 Bad Request`
 
@@ -860,7 +860,7 @@ noHeaders
 {
 	"code": 23,
 	"data": "S/R",
-	"message": "el campo array_datos debe ser un array"
+	"message": "el campo caracteristica.id debe ser un Entero"
 }
 ```
 
