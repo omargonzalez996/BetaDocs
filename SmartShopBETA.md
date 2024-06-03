@@ -971,10 +971,8 @@ noHeaders
 ```
 
 **Condición** : `formato incorrecto de caracteristica.id`
-
 **Código** : `400 Bad Request`
-
-**Contenido** : 
+**Contenido** :
 ```json
 {
 	"code": 23,
@@ -982,7 +980,8 @@ noHeaders
 	"message": "el campo caracteristica.id debe ser un Entero"
 }
 ```
----
+
+
 ## /notificacion/creditoCliente
 
 >Notificacion para solicitar un credito de venta a un cliente
