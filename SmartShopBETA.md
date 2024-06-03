@@ -19,9 +19,10 @@ Body
 
 ```json
 {
-	"folio_factura": "MIG-MIE-22-05",
-	"fecha_emision": "2024-05-22",
-	"meses_garantia": 3
+    "folio_factura": "MIG-MIE-22-05",
+    "fecha_emision": "2024-05-22",
+    "meses_garantia": 3,
+    "buffer": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdjWGJx5D8ABcQCoNLRvt8AAAAASUVORK5CYII="
 }
 ```
 
@@ -35,9 +36,9 @@ Body
 
 ```json
 {
-	"code": 0,
-	"data": "factura insertada correctamente",
-	"message": "Petición realizada exitosamente"
+    "code": 0,
+    "data": "factura insertada correctamente",
+    "message": "Petición realizada exitosamente"
 }
 ```
 
@@ -94,14 +95,16 @@ No Body
       "proveedor_id": 1,
       "folio_factura": "MIG-MIE-22-05",
       "meses_garantia": 3,
-      "fecha_emision": "2024-05-22T06:00:00.000Z"
+      "fecha_emision": "2024-05-22T06:00:00.000Z",
+      "ruta_factura": "Facturas/MIG-LUN-05-27.pdf"
     },
     {
       "id": 2,
       "proveedor_id": 1,
       "folio_factura": "MIG-MIE-24-05",
       "meses_garantia": 6,
-      "fecha_emision": "2024-05-22T06:00:00.000Z"
+      "fecha_emision": "2024-05-22T06:00:00.000Z",
+      "ruta_factura": "Facturas/MIG-LUN-05-27.pdf"
     }
   ],
   "message": "Petición realizada exitosamente"
@@ -158,11 +161,17 @@ No Body
   "code": 0,
   "data": {
     "folio_factura": "MIG-MIE-22-05",
+    "proveedor_id": 1,
     "proveedor": "grupoGonz",
+    "direccion_proveedor": "enrique segoviano",
+    "telefono_proveedor": "4661010252",
+    "correo_proveedor": "contacto@grupogonz.com",
+    "meses_garantia": 3,
     "fecha_emision": "2024-05-22 00:00:00",
+    "ruta_factura": "S/R",
     "detalles": [
       {
-        "cantidad": 10,
+        "cantidad": 8,
         "imei": [
           "712309865720001",
           " 712309865720002",
@@ -248,11 +257,17 @@ No Body
   "code": 0,
   "data": {
     "folio_factura": "MIG-MIE-22-05",
+    "proveedor_id": 1,
     "proveedor": "grupoGonz",
+    "direccion_proveedor": "enrique segoviano",
+    "telefono_proveedor": "4661010252",
+    "correo_proveedor": "contacto@grupogonz.com",
+    "meses_garantia": 3,
     "fecha_emision": "2024-05-22 00:00:00",
+    "ruta_factura": "S/R",
     "detalles": [
       {
-        "cantidad": 10,
+        "cantidad": 8,
         "imei": [
           "712309865720001",
           " 712309865720002",
