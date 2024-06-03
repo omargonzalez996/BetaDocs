@@ -931,7 +931,8 @@ noHeaders
       "hexadecimal": "#FF000000",
       "marca": "Alcatel",
       "modelo": "1050A L",
-      "tipoTelefono": "0"
+      "tipoTelefono": "0",
+      "imei": ["314159265358980", "314159265358980", "314159265358981"]
     },
 	{
       "producto_id": 29,
@@ -953,7 +954,8 @@ noHeaders
       "hexadecimal": "#FF000000",
       "marca": "Alcatel",
       "modelo": "1050A L",
-      "tipoTelefono": "0"
+      "tipoTelefono": "0",
+      "imei": ["314159265358983", "314159265358982", "314159265358983"]
     }
   ]
 ]
