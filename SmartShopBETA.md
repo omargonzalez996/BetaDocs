@@ -161,11 +161,17 @@ No Body
   "code": 0,
   "data": {
     "folio_factura": "MIG-MIE-22-05",
+    "proveedor_id": 1,
     "proveedor": "grupoGonz",
+    "direccion_proveedor": "enrique segoviano",
+    "telefono_proveedor": "4661010252",
+    "correo_proveedor": "contacto@grupogonz.com",
+    "meses_garantia": 3,
     "fecha_emision": "2024-05-22 00:00:00",
+    "ruta_factura": "S/R",
     "detalles": [
       {
-        "cantidad": 10,
+        "cantidad": 8,
         "imei": [
           "712309865720001",
           " 712309865720002",
@@ -251,11 +257,17 @@ No Body
   "code": 0,
   "data": {
     "folio_factura": "MIG-MIE-22-05",
+    "proveedor_id": 1,
     "proveedor": "grupoGonz",
+    "direccion_proveedor": "enrique segoviano",
+    "telefono_proveedor": "4661010252",
+    "correo_proveedor": "contacto@grupogonz.com",
+    "meses_garantia": 3,
     "fecha_emision": "2024-05-22 00:00:00",
+    "ruta_factura": "S/R",
     "detalles": [
       {
-        "cantidad": 10,
+        "cantidad": 8,
         "imei": [
           "712309865720001",
           " 712309865720002",
