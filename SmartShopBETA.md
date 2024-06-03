@@ -869,3 +869,230 @@ noHeaders
 }
 ```
 
+
+
+# Ventas
+## /ventas/rutas
+
+>Registra una venta 
+
+**URL** : `https://pruebasmorpheus.com:19000/producto/insert/productoAccesorio
+
+**Method**: `POST`
+
+**Headers**: 
+
+```json
+noHeaders
+```
+
+**Body**:
+```json
+[
+  {
+    "cliente_id": 99,
+    "folio": "21398252",
+    "credito": 0,
+    "abono": 0,
+    "usuario": 1103,
+    "key": "1675373466559"
+  },
+  [
+    {
+      "producto_id": 29,
+      "cantidad": 1,
+      "precioFinal": 210,
+      "tipoProduct": 1,
+      "categoriaProducto": "Teléfono",
+      "personalVenta_id": 14,
+      "tipo": "Venta",
+      "producto_modelo": 29,
+      "color_id": 6,
+      "inventarioVenta_id": 4973,
+      "categoriaProducto_id": 2,
+      "imagen": "alcatel_1050L.png",
+      "url": "android/VentasMarquesadaV.1.1/imagenes/imagen_productos/",
+      "color": "Negro",
+      "hexadecimal": "#FF000000",
+      "marca": "Alcatel",
+      "modelo": "1050A L",
+      "tipoTelefono": "0"
+    },
+	{
+      "producto_id": 29,
+      "cantidad": 1,
+      "precioFinal": 210,
+      "tipoProducto": 1,
+      "categoriaProducto": "Teléfono",
+      "personalVenta_id": 14,
+      "tipo": "Venta Plan",
+      "tipoplan": 2,
+      "referencia": "SDKD34938SD",
+      "producto_modelo": 29,
+      "color_id": 6,
+      "inventarioVenta_id": 4973,
+      "categoriaProducto_id": 2,
+      "imagen": "alcatel_1050L.png",
+      "url": "android/VentasMarquesadaV.1.1/imagenes/imagen_productos/",
+      "color": "Negro",
+      "hexadecimal": "#FF000000",
+      "marca": "Alcatel",
+      "modelo": "1050A L",
+      "tipoTelefono": "0"
+    }
+  ]
+]
+```
+
+#### Respuesta Exitosa
+
+**Condición** : `Si todo salió bien.`
+
+**Code** : `200 OK`
+
+**Contenido**
+
+```json
+{
+	"code": 0,
+	"data": [],
+	"message": "Petición realizada exitosamente"
+}
+```
+
+#### Respuestas de error
+
+**Condición** : `Error en el proceso`
+
+**Código** : `400 Bad Request`
+
+**Contenido** : 
+```json
+{
+  "code": 29,
+  "data": ["S/R"],
+  "message": "Error de petición"
+}
+```
+
+**Condición** : `formato incorrecto de caracteristica.id`
+
+**Código** : `400 Bad Request`
+
+**Contenido** : 
+```json
+{
+	"code": 23,
+	"data": "S/R",
+	"message": "el campo caracteristica.id debe ser un Entero"
+}
+```
+---
+## /notificacion/creditoCliente
+
+>Notificacion para solicitar un credito de venta a un cliente
+
+**URL** : `https://pruebasmorpheus.com:19000/notificacion/creditoCliente
+
+**Method**: `POST`
+
+**Headers**: 
+
+```json
+{
+  cliente_id: [Int],
+  personalventa_id: [Int]
+}
+```
+
+**Body**:
+```json
+{
+  "mensaje": "El monto del crédito es: $13,287.00",
+  "titulo": "Se registro un nuevo crédito",
+  "tipoUsuario": "Cliente",
+  "tipoNotificacion": "VentaCredito",
+  "json": [
+    {
+      "cliente_id": 466,
+      "folio": "415332314",
+      "credito": 1,
+      "abono": 0,
+      "usuario": 8,
+      "key": "1602878603900"
+    },
+    [
+      {
+        "producto_id": 679,
+        "cantidad": 3,
+        "precioFinal": 4429,
+        "tipoProducto": 1,
+        "categoriaProducto": "Teléfono",
+        "personalVenta_id": 6,
+        "tipo": "Venta",
+        "producto_modelo": 675,
+        "color_id": 44,
+        "inventarioVenta_id": 9165,
+        "categoriaProducto_id": 2,
+        "imagen": "motog7.png",
+        "url": "android/VentasMarquesadaV.1.1/imagenes/imagen_productos/",
+        "color": "Azul Fuerte",
+        "hexadecimal": "#00006C",
+        "marca": "MOTOROLA",
+        "modelo": "G7 +",
+        "tipoTelefono": "0",
+        "imei": [
+          "183628631085342",
+          "852988741072463",
+          "989623173624758"
+        ]
+      }
+    ]
+  ]
+}
+```
+
+#### Respuesta Exitosa
+
+**Condición** : `Si todo salió bien.`
+
+**Code** : `200 OK`
+
+**Contenido**
+
+```json
+{
+	"code": 0,
+	"data": [],
+	"message": "Petición realizada exitosamente"
+}
+```
+
+#### Respuestas de error
+
+**Condición** : `Error en el proceso`
+
+**Código** : `400 Bad Request`
+
+**Contenido** : 
+```json
+{
+  "code": 29,
+  "data": ["S/R"],
+  "message": "Error de petición"
+}
+```
+
+**Condición** : `formato incorrecto de caracteristica.id`
+
+**Código** : `400 Bad Request`
+
+**Contenido** : 
+```json
+{
+	"code": 23,
+	"data": "S/R",
+	"message": "el campo caracteristica.id debe ser un Entero"
+}
+```
+
