@@ -947,11 +947,8 @@ noHeaders
 #### Respuesta Exitosa
 
 **Condición** : `Si todo salió bien.`
-
 **Code** : `200 OK`
-
-**Contenido**
-
+**Contenido** :
 ```json
 {
 	"code": 0,
@@ -963,9 +960,7 @@ noHeaders
 #### Respuestas de error
 
 **Condición** : `Error en el proceso`
-
 **Código** : `400 Bad Request`
-
 **Contenido** : 
 ```json
 {
