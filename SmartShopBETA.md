@@ -891,7 +891,7 @@ noHeaders
 
 >Registra una venta 
 
-**URL** : `https://pruebasmorpheus.com:19000/producto/insert/productoAccesorio
+**URL** : `https://pruebasmorpheus.com:19000/ventas/rutas
 
 **Method**: `POST`
 
