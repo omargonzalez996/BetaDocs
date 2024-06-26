@@ -1,5 +1,5 @@
 # FacturaProducto
-## `POST`/productofactura/insertar
+## /productofactura/insertar
 
 >Crea un registro nuevo de facturaProducto
 
@@ -56,7 +56,7 @@ Body
   "message": "Los Datos de factura ya existen"
 }
 ```
-## `GET` /productoFactura/listar
+## /productoFactura/listar
 
 >Lista todos los registros de factura o los de un proveedor
 
@@ -126,7 +126,7 @@ No Body
 }
 ```
 
-## `GET` /productoFactura/detalles
+## /productoFactura/detalles
 
 >Lista todos los detalles de los productos de una factura
 
@@ -222,7 +222,7 @@ No Body
   "message": "No se encontraron datos de la factura"
 }
 ```
-## `GET` /productoFactura/buscarPorImei
+## /productoFactura/buscarPorImei
 
 >Busca una factura asociada al imei proporcionado y muestra todos sus detalles.
 
@@ -334,7 +334,7 @@ No Body
 
 # Inventario
 
-## `GET` /inventario/busqueda/imeis
+## /inventario/busqueda/imeis
 
 >Busca una factura asociada al imei proporcionado y muestra todos sus detalles.
 
@@ -483,7 +483,7 @@ No Body
 
 
 # Producto
-## `GET` /producto/listar/imeifaltante
+## /producto/listar/imeifaltante
 
 >Lista los productos de un personalventa con la cantidad actual y la cantidad de imeis registrados.
 
@@ -575,7 +575,7 @@ No Body
 }
 ```
 
-## `POST` /producto/insert/imei
+## /producto/insert/imei
 
 >Lista los productos de un personalventa con la cantidad actual y la cantidad de imeis registrados.
 
@@ -660,7 +660,7 @@ No Body
 
 
 
-## `GET` /producto/listar/movimientoimei #incompleto
+## /producto/listar/movimientoimei #incompleto
 
 >Lista los productos de un personalventa con la cantidad actual y la cantidad de imeis registrados.
 
@@ -723,7 +723,7 @@ No Body
 }
 ```
 
-## `PUT` /producto/descuento/inventario
+## /producto/descuento/inventario
 
 >Descuenta cantidad de inventario de un producto
 
@@ -797,7 +797,7 @@ No Body
 ```
 
 
-## `POST` /producto/insert/productoAccesorio
+## /producto/insert/productoAccesorio
 
 >Agrega un accesorio
 
@@ -891,7 +891,7 @@ noHeaders
 
 >Registra una venta 
 
-**URL** : `https://pruebasmorpheus.com:19000/producto/insert/productoAccesorio
+**URL** : `https://pruebasmorpheus.com:19000/ventas/rutas
 
 **Method**: `POST`
 
