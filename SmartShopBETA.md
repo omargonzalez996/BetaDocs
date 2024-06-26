@@ -56,6 +56,117 @@ Body
   "message": "Los Datos de factura ya existen"
 }
 ```
+
+## /productofactura/agregarComprobanteFactura
+
+>Registra un comprobante de factura para una factura que no tenga.
+
+**URL** : `https://pruebasmorpheus.com:19000/productoFactura/agregarComprobanteFactura`
+
+**Method** : `PUT`
+
+Headers
+
+```json
+{
+    "factura_id": "[ID][NUMERO][ENTERO]"
+}
+```
+
+Body
+
+```json
+{
+    "buffer": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdjWGJx5D8ABcQCoNLRvt8AAAAASUVORK5CYII="
+}
+```
+
+#### Respuesta Exitosa
+
+**Condición** : Si todo salió bien y se registró el comprobante para factura.
+
+**Code** : `200 OK`
+
+**Contenido**
+
+```json
+{
+    "code": 0,
+    "data": [],
+    "message": "comprobante de factura insertado correctamente"
+}
+```
+
+#### Respuesta de error
+
+**Condición** : Si ya existe un registro de factura con ese id de proveedor y folio_factura
+
+**Codigo**: `400 Bad Request`
+
+**Contenido** : 
+```json
+{
+  "code": 22,
+  "data": "error",
+  "message": "Solo se permiten documentos PDF como comporobante de factura"
+}
+```
+
+## /productofactura/actualizarComprobanteFactura
+
+>Borra el comprobante anterior de factura y registra uno nuevo
+
+**URL** : `https://pruebasmorpheus.com:19000/productoFactura/actualizarComprobanteFactura`
+
+**Method** : `PUT`
+
+Headers
+
+```json
+{
+    "factura_id": "[ID][NUMERO][ENTERO]"
+}
+```
+
+Body
+
+```json
+{
+    "buffer": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdjWGJx5D8ABcQCoNLRvt8AAAAASUVORK5CYII="
+}
+```
+
+#### Respuesta Exitosa
+
+**Condición** : Si todo salió bien y se registró el comprobante para factura.
+
+**Code** : `200 OK`
+
+**Contenido**
+
+```json
+{
+    "code": 0,
+    "data": [],
+    "message": "comprobante de factura insertado correctamente"
+}
+```
+
+#### Respuesta de error
+
+**Condición** : Si ya existe un registro de factura con ese id de proveedor y folio_factura
+
+**Codigo**: `400 Bad Request`
+
+**Contenido** : 
+```json
+{
+  "code": 22,
+  "data": "error",
+  "message": "Solo se permiten documentos PDF como comporobante de factura"
+}
+```
+
 ## /productoFactura/listar
 
 >Lista todos los registros de factura o los de un proveedor
