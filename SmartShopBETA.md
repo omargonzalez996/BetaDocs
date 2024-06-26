@@ -1105,7 +1105,7 @@ noHeaders
 	"message": "el campo caracteristica.id debe ser un Entero"
 }
 ```
-
+# Proveedor
 ## /proveedor/desactivar
 >Desactivar un provedor vinculados a la factura
 
