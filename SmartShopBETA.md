@@ -998,7 +998,6 @@ noHeaders
 }
 ```
 
-
 ## /notificacion/creditoCliente
 
 >Notificacion para solicitar un credito de venta a un cliente
@@ -1107,3 +1106,122 @@ noHeaders
 }
 ```
 
+## /proveedor/desactivar
+>Desactivar un provedor vinculados a la factura
+
+**URL** : `https://pruebasmorpheus.com:19000/proveedor/desactivar
+
+**Method**: `PUT`
+
+**Headers**: 
+
+```json
+{
+  proveedor_id: [Int]
+}
+```
+#### Respuesta Exitosa
+
+**Condición** : `Si todo salió bien.`
+
+**Code** : `200 OK`
+
+**Contenido**
+
+```json
+{
+	"code": 0,
+	"data": [],
+	"message": "Petición realizada exitosamente"
+}
+```
+
+#### Respuestas de error
+
+**Condición** : `Error en el proceso`
+**Código** : `400 Bad Request`
+**Contenido** : 
+```json
+{
+  "code": 29,
+  "data": ["S/R"],
+  "message": "Error de petición"
+}
+```
+
+**Condición** : `Error interno del servidor`
+**Código** : `500`
+**Contenido** :
+```json
+{
+	"data": "S/R",
+	"message": "Error interno del servidor"
+}
+```
+
+## /proveedor/actualizar
+>Desactivar un provedor vinculados a la factura
+
+**URL** : `https://pruebasmorpheus.com:19000/proveedor/actualizar
+
+**Method**: `PUT`
+
+**Headers**: 
+
+```json
+{
+  proveedor_id: [Int]
+}
+```
+
+**Body**:
+```json
+{
+    "nombre": "S/R",
+    "direccion": "S/R",
+    "telefono": "6663332266",
+    "correo": "S/R"
+}
+```
+#### Respuesta Exitosa
+
+**Condición** : `Si todo salió bien.`
+
+**Code** : `200 OK`
+
+**Contenido**
+
+```json
+{
+	"code": 0,
+	"data": [],
+	"message": "Petición realizada exitosamente"
+}
+```
+
+#### Respuestas de error
+
+**Condición** : `Formato incorrecto en parametros`
+
+**Código** : `400 Bad Request`
+
+**Contenido** : 
+```json
+{
+  "code": 20,
+  "data": "error",
+  "message": "Parametros incorrectos"
+}
+```
+
+**Condición** : `Error interno del servidor`
+
+**Código** : `500`
+
+**Contenido** : 
+```json
+{
+  "code": 20,
+  "data": "error",
+  "message": "Error interno del servidor"
+}
