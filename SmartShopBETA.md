@@ -443,6 +443,98 @@ No Body
 }
 ```
 
+## /productoFactura/actualizarDetalle
+
+>Busca una factura asociada al imei proporcionado y muestra todos sus detalles.
+
+**URL** : `https://pruebasmorpheus.com:19000/productoFactura/actualizarDetalle
+
+**Method**: `PUT`
+
+**Headers**: 
+
+```json
+{
+    "factura_id": "[soloNumerosEnteros]",
+    "movimientoinventario_id": "[soloNumerosEnteros]"
+}
+```
+
+**Body**:
+
+```json
+{
+	datosCorreccion: {
+		cantidad: num,
+		color_id: id,
+		factura_id: factura_id,
+		imei: [
+			imei,
+			imei,
+			imei,
+		] //opcional, si no es de tipo telefono no mandar campo imei
+	}
+}
+```
+
+#### Respuesta Exitosa
+
+**Condición** : `Si todo salió bien.`
+
+**Code** : `200 OK`
+
+**Contenido**
+
+```json
+{
+  "code": 0,
+  "data": "S/R",
+  "message": "Petición realizada exitosamente"
+}
+```
+
+#### Respuestas de error
+
+**Condición** : `Si no se recibe un id `
+
+**Código** : `400 Bad Request`
+
+**Contenido** : 
+```json
+{
+  "code": 21,
+  "data": "error",
+  "message": "No se encontró factura con el id proporcionado"
+}
+```
+
+**Condición** : `Si no se encontraron datos asociados a ese imei`
+
+**Código** : `400 Bad Request`
+
+**Contenido** : 
+```json
+{
+  "code": 23,
+  "data": "S/R",
+  "message": "No se encontró factura realacionada a ese imei"
+}
+```
+
+**Condición** : `Longitud incorrecta del campo imei`
+
+**Código** : `400 Bad Request`
+
+**Contenido** : 
+```json
+{
+  "code": 21,
+  "data": "error",
+  "message": "La longitud de los imeis debe ser de 15 caracteres :)"
+}
+```
+
+
 # Inventario
 
 ## /inventario/busqueda/imeis
