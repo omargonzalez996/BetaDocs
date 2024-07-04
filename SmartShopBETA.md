@@ -467,7 +467,6 @@ No Body
 	datosCorreccion: {
 		cantidad: num,
 		color_id: id,
-		factura_id: factura_id,
 		imei: [
 			imei,
 			imei,
