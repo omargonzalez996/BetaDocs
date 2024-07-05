@@ -464,15 +464,13 @@ No Body
 
 ```json
 {
-	datosCorreccion: {
-		cantidad: num,
-		color_id: id,
-		imei: [
-			imei,
-			imei,
-			imei,
-		] //opcional, si no es de tipo telefono no mandar campo imei
-	}
+	cantidad: num,
+	color_id: id,
+	imei: [
+		imei,
+		imei,
+		imei,
+	] //opcional, si no es de tipo telefono no mandar campo imei
 }
 ```
 
