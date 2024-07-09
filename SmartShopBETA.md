@@ -1,5 +1,5 @@
 # FacturaProducto
-## /productoFactura/listarTipoComprobante
+## listarTipoComprobante
 
 >Lista los tipos de comprobante con su id
 
@@ -60,7 +60,7 @@ noBody
 ```
 
 
-## /productofactura/insertar
+## insertar
 
 >Crea un registro nuevo de facturaProducto
 
@@ -119,7 +119,7 @@ Body
 }
 ```
 
-## /productofactura/agregarComprobanteFactura
+## agregarComprobanteFactura
 
 >Registra un comprobante de factura para una factura que no tenga.
 
@@ -174,7 +174,7 @@ Body
 }
 ```
 
-## /productofactura/actualizarComprobanteFactura
+## actualizarComprobanteFactura
 
 >Borra el comprobante anterior de factura y registra uno nuevo
 
@@ -229,7 +229,7 @@ Body
 }
 ```
 
-## /productofactura/cambiarRemisionAFactura
+## cambiarRemisionAFactura
 
 > Actualiza un registro de remisión como factura con su comprobante.
 
@@ -284,7 +284,7 @@ Body
 }
 ```
 
-## /productoFactura/listar
+## listar
 
 >Lista todos los registros de factura o los de un proveedor
 
@@ -362,7 +362,7 @@ No Body
 }
 ```
 
-## /productoFactura/detalles
+## detalles
 
 >Lista todos los detalles de los productos de una factura
 
@@ -482,7 +482,7 @@ No Body
   "message": "No se encontraron datos de la factura"
 }
 ```
-## /productoFactura/buscarPorImei
+## buscarPorImei
 
 >Busca una factura asociada al imei proporcionado y muestra todos sus detalles.
 
@@ -616,7 +616,7 @@ No Body
 }
 ```
 
-## /productoFactura/actualizarDetalle
+## actualizarDetalle
 
 >Busca una factura asociada al imei proporcionado y muestra todos sus detalles.
 
@@ -707,11 +707,11 @@ No Body
 
 # Inventario
 
-## /inventario/busqueda/imeis
+## busqueda/imeis
 
->Busca una factura asociada al imei proporcionado y muestra todos sus detalles.
+>Busca relacione entre el personal venta e imeis proporcionados
 
-**URL** : `https://pruebasmorpheus.com:19000/productoFactura/buscarPorImei
+**URL** : `https://pruebasmorpheus.com:19000/inventario/busqueda/imeis
 
 **Method**: `GET`
 
@@ -856,7 +856,7 @@ No Body
 
 
 # Producto
-## /producto/listar/imeifaltante
+## listar/imeifaltante
 
 >Lista los productos de un personalventa con la cantidad actual y la cantidad de imeis registrados.
 
@@ -948,7 +948,7 @@ No Body
 }
 ```
 
-## /producto/insert/imei
+## insert/imei
 
 >Lista los productos de un personalventa con la cantidad actual y la cantidad de imeis registrados.
 
@@ -1033,7 +1033,7 @@ No Body
 
 
 
-## /producto/listar/movimientoimei #incompleto
+## listar/movimientoimei #incompleto
 
 >Lista los productos de un personalventa con la cantidad actual y la cantidad de imeis registrados.
 
@@ -1096,7 +1096,7 @@ No Body
 }
 ```
 
-## /producto/descuento/inventario
+## descuento/inventario
 
 >Descuenta cantidad de inventario de un producto
 
@@ -1170,7 +1170,7 @@ No Body
 ```
 
 
-## /producto/insert/productoAccesorio
+## insert/productoAccesorio
 
 >Agrega un accesorio
 
@@ -1260,7 +1260,7 @@ noHeaders
 
 
 # Ventas
-## /ventas/rutas
+## rutas
 
 >Registra una venta 
 
@@ -1479,7 +1479,7 @@ noHeaders
 }
 ```
 # Proveedor
-## /proveedor/desactivar
+## desactivar
 >Desactivar un provedor vinculados a la factura
 
 **URL** : `https://pruebasmorpheus.com:19000/proveedor/desactivar
@@ -1532,7 +1532,7 @@ noHeaders
 }
 ```
 
-## /proveedor/actualizar
+## actualizar
 >Desactivar un provedor vinculados a la factura
 
 **URL** : `https://pruebasmorpheus.com:19000/proveedor/actualizar
