@@ -1,5 +1,5 @@
 # FacturaProducto
-## /productoFactura/listarTipoComprobante
+## `GET` /productoFactura/listarTipoComprobante
 
 >Lista los tipos de comprobante con su id
 
@@ -60,7 +60,7 @@ noBody
 ```
 
 
-## /productofactura/insertar
+## `POST` /productofactura/insertar
 
 >Crea un registro nuevo de facturaProducto
 
@@ -119,7 +119,7 @@ Body
 }
 ```
 
-## /productofactura/agregarComprobanteFactura
+## `PUT` /productofactura/agregarComprobanteFactura
 
 >Registra un comprobante de factura para una factura que no tenga.
 
@@ -174,7 +174,7 @@ Body
 }
 ```
 
-## /productofactura/actualizarComprobanteFactura
+## `PUT` /productofactura/actualizarComprobanteFactura
 
 >Borra el comprobante anterior de factura y registra uno nuevo
 
@@ -229,7 +229,62 @@ Body
 }
 ```
 
-## /productoFactura/listar
+## `PUT` /productofactura/cambiarRemisionAFactura
+
+>Borra el comprobante anterior de factura y registra uno nuevo
+
+**URL** : `https://pruebasmorpheus.com:19000/productoFactura/cambiarRemisionAFactura`
+
+**Method** : `PUT`
+
+Headers
+
+```json
+{
+    "factura_id": "[ID][NUMERO][ENTERO]"
+}
+```
+
+Body
+
+```json
+{
+    "buffer": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdjWGJx5D8ABcQCoNLRvt8AAAAASUVORK5CYII="
+}
+```
+
+#### Respuesta Exitosa
+
+**Condición** : Si todo salió bien y se registró el comprobante para factura.
+
+**Code** : `200 OK`
+
+**Contenido**
+
+```json
+{
+    "code": 0,
+    "data": [],
+    "message": "remisión actualizada a factura correctamente"
+}
+```
+
+#### Respuesta de error
+
+**Condición** : Si ya existe un registro de factura con ese id de proveedor y folio_factura
+
+**Código**: `400 Bad Request`
+
+**Contenido** : 
+```json
+{
+  "code": 22,
+  "data": "error",
+  "message": "Solo se permiten documentos PDF como comporobante de factura"
+}
+```
+
+## `GET` /productoFactura/listar
 
 >Lista todos los registros de factura o los de un proveedor
 
@@ -307,7 +362,7 @@ No Body
 }
 ```
 
-## /productoFactura/detalles
+## `GET` /productoFactura/detalles
 
 >Lista todos los detalles de los productos de una factura
 
@@ -427,7 +482,7 @@ No Body
   "message": "No se encontraron datos de la factura"
 }
 ```
-## /productoFactura/buscarPorImei
+## `GET` /productoFactura/buscarPorImei
 
 >Busca una factura asociada al imei proporcionado y muestra todos sus detalles.
 
@@ -561,7 +616,7 @@ No Body
 }
 ```
 
-## /productoFactura/actualizarDetalle
+## `PUT` /productoFactura/actualizarDetalle
 
 >Busca una factura asociada al imei proporcionado y muestra todos sus detalles.
 
@@ -652,7 +707,7 @@ No Body
 
 # Inventario
 
-## /inventario/busqueda/imeis
+## `GET` /inventario/busqueda/imeis
 
 >Busca una factura asociada al imei proporcionado y muestra todos sus detalles.
 
@@ -801,7 +856,7 @@ No Body
 
 
 # Producto
-## /producto/listar/imeifaltante
+## `GET` /producto/listar/imeifaltante
 
 >Lista los productos de un personalventa con la cantidad actual y la cantidad de imeis registrados.
 
@@ -893,7 +948,7 @@ No Body
 }
 ```
 
-## /producto/insert/imei
+## `POST` /producto/insert/imei
 
 >Lista los productos de un personalventa con la cantidad actual y la cantidad de imeis registrados.
 
@@ -978,7 +1033,7 @@ No Body
 
 
 
-## /producto/listar/movimientoimei #incompleto
+## `GET` /producto/listar/movimientoimei #incompleto
 
 >Lista los productos de un personalventa con la cantidad actual y la cantidad de imeis registrados.
 
@@ -1041,7 +1096,7 @@ No Body
 }
 ```
 
-## /producto/descuento/inventario
+## `PUT` /producto/descuento/inventario
 
 >Descuenta cantidad de inventario de un producto
 
@@ -1115,7 +1170,7 @@ No Body
 ```
 
 
-## /producto/insert/productoAccesorio
+## `POST` /producto/insert/productoAccesorio
 
 >Agrega un accesorio
 
@@ -1205,7 +1260,7 @@ noHeaders
 
 
 # Ventas
-## /ventas/rutas
+## `POST` /ventas/rutas
 
 >Registra una venta 
 
@@ -1316,7 +1371,7 @@ noHeaders
 }
 ```
 
-## /notificacion/creditoCliente
+## `POST` /notificacion/creditoCliente
 
 >Notificacion para solicitar un credito de venta a un cliente
 
@@ -1424,7 +1479,7 @@ noHeaders
 }
 ```
 # Proveedor
-## /proveedor/desactivar
+## `PUT` /proveedor/desactivar
 >Desactivar un provedor vinculados a la factura
 
 **URL** : `https://pruebasmorpheus.com:19000/proveedor/desactivar
@@ -1477,7 +1532,7 @@ noHeaders
 }
 ```
 
-## /proveedor/actualizar
+## `PUT` /proveedor/actualizar
 >Desactivar un provedor vinculados a la factura
 
 **URL** : `https://pruebasmorpheus.com:19000/proveedor/actualizar
