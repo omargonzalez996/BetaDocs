@@ -1,4 +1,65 @@
 # FacturaProducto
+## /productoFactura/listarTipoComprobante
+
+>Lista los tipos de comprobante con su id
+
+**URL** : `https://pruebasmorpheus.com:19000/productoFactura/listarTipoComprobante
+
+**Method** : `GET`
+
+Headers
+
+```json
+noHeaders
+```
+
+Body
+
+```json
+noBody
+```
+
+#### Respuesta Exitosa
+
+**Condición** : Si todo salió bien y se registró la factura.
+
+**Code** : `200 OK`
+
+**Contenido**
+
+```json
+{
+  "code": 0,
+  "data": [
+    {
+      "id": 1,
+      "nombre": "factura"
+    },
+    {
+      "id": 2,
+      "nombre": "remision"
+    }
+  ],
+  "message": "Petición realizada exitosamente"
+}
+```
+
+#### Respuesta de error
+
+**Condición** : no se encontraron datos
+
+**Codigo**: `400 Bad Request`
+
+**Contenido** : 
+```json
+{
+  "code": 22,
+  "data": [],
+  "message": "No se encontraron datos de la factura"
+}
+```
+
+
 ## /productofactura/insertar
 
 >Crea un registro nuevo de facturaProducto
@@ -11,7 +72,8 @@ Headers
 
 ```json
 {
-    "proveedor_id": "[entero]"
+    "proveedor_id": "[entero]",
+    "tipoComprobante_id": "[entero]"
 }
 ```
 
@@ -204,18 +266,26 @@ No Body
     {
       "id": 1,
       "proveedor_id": 1,
+      "proveedor": "grupoGonz",
       "folio_factura": "MIG-MIE-22-05",
       "meses_garantia": 3,
-      "fecha_emision": "2024-05-22T06:00:00.000Z",
-      "ruta_factura": "Facturas/MIG-LUN-05-27.pdf"
+      "tipocomprobante_id": 1,
+      "tipocomprobante": "factura",
+      "fecha_emision": "2024-05-22 00:00:00",
+      "fecha_actualizacion": "2024-05-22 00:00:00",
+      "ruta_factura": "Facturas/MIG-MIE-22-05.pdf"
     },
     {
       "id": 2,
       "proveedor_id": 1,
+      "proveedor": "grupoGonz",
       "folio_factura": "MIG-MIE-24-05",
       "meses_garantia": 6,
-      "fecha_emision": "2024-05-22T06:00:00.000Z",
-      "ruta_factura": "Facturas/MIG-LUN-05-27.pdf"
+      "tipocomprobante_id": 1,
+      "tipocomprobante": "factura",
+      "fecha_emision": "2024-05-22 00:00:00",
+      "fecha_actualizacion": "2024-05-22 00:00:00",
+      "ruta_factura": "Facturas/MIG-MIE-24-05.pdf"
     }
   ],
   "message": "Petición realizada exitosamente"
@@ -271,34 +341,58 @@ No Body
 {
   "code": 0,
   "data": {
-    "folio_factura": "MIG-MIE-22-05",
-    "proveedor_id": 1,
-    "proveedor": "grupoGonz",
-    "direccion_proveedor": "enrique segoviano",
-    "telefono_proveedor": "4661010252",
-    "correo_proveedor": "contacto@grupogonz.com",
-    "meses_garantia": 3,
-    "fecha_emision": "2024-05-22 00:00:00",
-    "ruta_factura": "S/R",
+    "tipoComprobante_id": 1,
+    "tipoComprobante": "factura",
+    "folio_factura": "RR-00822",
+    "proveedor_id": 10,
+    "proveedor": "Ricardo",
+    "direccion_proveedor": "aqui morpheus",
+    "telefono_proveedor": "1111111111",
+    "correo_proveedor": "",
+    "meses_garantia": 24,
+    "fecha_emision": "2024-04-04 00:00:00",
+    "fecha_actualizacion": "2024-04-04 00:00:00",
+    "ruta_factura": "Facturas/RR-00822.pdf",
     "detalles": [
       {
-        "cantidad": 8,
+        "cantidad": 7,
+        "categoria": "Teléfono",
+        "movimientoinventario_id": 460546,
         "imei": [
-          "712309865720001",
-          " 712309865720002",
-          " 712309865720003",
-          " 712309865720004",
-          " 712309865720005",
-          " 712309865720006",
-          " 712309865720007",
-          " 712309865720008",
-          " 712309865720009",
-          " 712309865720010"
+          "200000000100229",
+          "200000000100230",
+          "200000000100224",
+          "200000000100225",
+          "200000000100227",
+          "200000000100226",
+          "200000000100228"
         ],
-        "marca": "Samsung",
-        "modelo": "Samsung A54 5G 6/128 GB",
-        "color": "Acero",
-        "precioFactura": 5000
+        "marca": "OPPO",
+        "modelo": "R8106",
+        "producto_id": 110,
+        "codigo": "OPPO",
+        "color_id": 111,
+        "color": "Verde petróleo",
+        "precioFactura": 6397
+      },
+      {
+        "cantidad": 5,
+        "categoria": "Teléfono",
+        "movimientoinventario_id": 460547,
+        "imei": [
+          "200000000100235",
+          "200000000100234",
+          "200000000100233",
+          "200000000100232",
+          "200000000100231"
+        ],
+        "marca": "12C 6/128 gb",
+        "modelo": "nueva",
+        "producto_id": 2710,
+        "codigo": "VINICIUS",
+        "color_id": 92,
+        "color": "Gris Pizarra",
+        "precioFactura": 1234
       }
     ]
   },
@@ -367,34 +461,58 @@ No Body
 {
   "code": 0,
   "data": {
-    "folio_factura": "MIG-MIE-22-05",
-    "proveedor_id": 1,
-    "proveedor": "grupoGonz",
-    "direccion_proveedor": "enrique segoviano",
-    "telefono_proveedor": "4661010252",
-    "correo_proveedor": "contacto@grupogonz.com",
-    "meses_garantia": 3,
-    "fecha_emision": "2024-05-22 00:00:00",
-    "ruta_factura": "S/R",
+    "tipoComprobante_id": 1,
+    "tipoComprobante": "factura",
+    "folio_factura": "RR-00822",
+    "proveedor_id": 10,
+    "proveedor": "Ricardo",
+    "direccion_proveedor": "aqui morpheus",
+    "telefono_proveedor": "1111111111",
+    "correo_proveedor": "",
+    "meses_garantia": 24,
+    "fecha_emision": "2024-04-04 00:00:00",
+    "fecha_actualizacion": "2024-04-04 00:00:00",
+    "ruta_factura": "Facturas/RR-00822.pdf",
     "detalles": [
       {
-        "cantidad": 8,
+        "cantidad": 7,
+        "categoria": "Teléfono",
+        "movimientoinventario_id": 460546,
         "imei": [
-          "712309865720001",
-          " 712309865720002",
-          " 712309865720003",
-          " 712309865720004",
-          " 712309865720005",
-          " 712309865720006",
-          " 712309865720007",
-          " 712309865720008",
-          " 712309865720009",
-          " 712309865720010"
+          "200000000100229",
+          "200000000100230",
+          "200000000100224",
+          "200000000100225",
+          "200000000100227",
+          "200000000100226",
+          "200000000100228"
         ],
-        "marca": "Samsung",
-        "modelo": "Samsung A54 5G 6/128 GB",
-        "color": "Acero",
-        "precioFactura": 5000
+        "marca": "OPPO",
+        "modelo": "R8106",
+        "producto_id": 110,
+        "codigo": "OPPO",
+        "color_id": 111,
+        "color": "Verde petróleo",
+        "precioFactura": 6397
+      },
+      {
+        "cantidad": 5,
+        "categoria": "Teléfono",
+        "movimientoinventario_id": 460547,
+        "imei": [
+          "200000000100235",
+          "200000000100234",
+          "200000000100233",
+          "200000000100232",
+          "200000000100231"
+        ],
+        "marca": "12C 6/128 gb",
+        "modelo": "nueva",
+        "producto_id": 2710,
+        "codigo": "VINICIUS",
+        "color_id": 92,
+        "color": "Gris Pizarra",
+        "precioFactura": 1234
       }
     ]
   },
