@@ -73,7 +73,7 @@ Headers
 ```json
 {
     "proveedor_id": "[entero]",
-    "tipoComprobante_id": "[entero]"
+    "tipoComprobante_id": "[1 para Factura | 2 para remision]"
 }
 ```
 
