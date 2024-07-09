@@ -231,7 +231,7 @@ Body
 
 ## /productofactura/cambiarRemisionAFactura
 
->Borra el comprobante anterior de factura y registra uno nuevo
+> Actualiza un registro de remisión como factura con su comprobante.
 
 **URL** : `https://pruebasmorpheus.com:19000/productoFactura/cambiarRemisionAFactura`
 
