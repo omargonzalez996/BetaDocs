@@ -1,5 +1,5 @@
 # FacturaProducto
-## <mark style="background: #BBFABBA6;">GET</mark> /productoFactura/listarTipoComprobante
+## /productoFactura/listarTipoComprobante
 
 >Lista los tipos de comprobante con su id
 
@@ -60,7 +60,7 @@ noBody
 ```
 
 
-## `POST` /productofactura/insertar
+## /productofactura/insertar
 
 >Crea un registro nuevo de facturaProducto
 
@@ -119,7 +119,7 @@ Body
 }
 ```
 
-## `PUT` /productofactura/agregarComprobanteFactura
+## /productofactura/agregarComprobanteFactura
 
 >Registra un comprobante de factura para una factura que no tenga.
 
@@ -174,7 +174,7 @@ Body
 }
 ```
 
-## `PUT` /productofactura/actualizarComprobanteFactura
+## /productofactura/actualizarComprobanteFactura
 
 >Borra el comprobante anterior de factura y registra uno nuevo
 
@@ -229,7 +229,7 @@ Body
 }
 ```
 
-## `PUT` /productofactura/cambiarRemisionAFactura
+## /productofactura/cambiarRemisionAFactura
 
 >Borra el comprobante anterior de factura y registra uno nuevo
 
@@ -284,7 +284,7 @@ Body
 }
 ```
 
-## `GET` /productoFactura/listar
+## /productoFactura/listar
 
 >Lista todos los registros de factura o los de un proveedor
 
@@ -362,7 +362,7 @@ No Body
 }
 ```
 
-## `GET` /productoFactura/detalles
+## /productoFactura/detalles
 
 >Lista todos los detalles de los productos de una factura
 
@@ -482,7 +482,7 @@ No Body
   "message": "No se encontraron datos de la factura"
 }
 ```
-## `GET` /productoFactura/buscarPorImei
+## /productoFactura/buscarPorImei
 
 >Busca una factura asociada al imei proporcionado y muestra todos sus detalles.
 
@@ -616,7 +616,7 @@ No Body
 }
 ```
 
-## `PUT` /productoFactura/actualizarDetalle
+## /productoFactura/actualizarDetalle
 
 >Busca una factura asociada al imei proporcionado y muestra todos sus detalles.
 
@@ -707,7 +707,7 @@ No Body
 
 # Inventario
 
-## `GET` /inventario/busqueda/imeis
+## /inventario/busqueda/imeis
 
 >Busca una factura asociada al imei proporcionado y muestra todos sus detalles.
 
@@ -856,7 +856,7 @@ No Body
 
 
 # Producto
-## `GET` /producto/listar/imeifaltante
+## /producto/listar/imeifaltante
 
 >Lista los productos de un personalventa con la cantidad actual y la cantidad de imeis registrados.
 
@@ -948,7 +948,7 @@ No Body
 }
 ```
 
-## `POST` /producto/insert/imei
+## /producto/insert/imei
 
 >Lista los productos de un personalventa con la cantidad actual y la cantidad de imeis registrados.
 
@@ -1033,7 +1033,7 @@ No Body
 
 
 
-## `GET` /producto/listar/movimientoimei #incompleto
+## /producto/listar/movimientoimei #incompleto
 
 >Lista los productos de un personalventa con la cantidad actual y la cantidad de imeis registrados.
 
@@ -1096,7 +1096,7 @@ No Body
 }
 ```
 
-## `PUT` /producto/descuento/inventario
+## /producto/descuento/inventario
 
 >Descuenta cantidad de inventario de un producto
 
@@ -1170,7 +1170,7 @@ No Body
 ```
 
 
-## `POST` /producto/insert/productoAccesorio
+## /producto/insert/productoAccesorio
 
 >Agrega un accesorio
 
@@ -1260,7 +1260,7 @@ noHeaders
 
 
 # Ventas
-## `POST` /ventas/rutas
+## /ventas/rutas
 
 >Registra una venta 
 
@@ -1371,7 +1371,7 @@ noHeaders
 }
 ```
 
-## `POST` /notificacion/creditoCliente
+## /notificacion/creditoCliente
 
 >Notificacion para solicitar un credito de venta a un cliente
 
@@ -1479,7 +1479,7 @@ noHeaders
 }
 ```
 # Proveedor
-## `PUT` /proveedor/desactivar
+## /proveedor/desactivar
 >Desactivar un provedor vinculados a la factura
 
 **URL** : `https://pruebasmorpheus.com:19000/proveedor/desactivar
@@ -1532,7 +1532,7 @@ noHeaders
 }
 ```
 
-## `PUT` /proveedor/actualizar
+## /proveedor/actualizar
 >Desactivar un provedor vinculados a la factura
 
 **URL** : `https://pruebasmorpheus.com:19000/proveedor/actualizar
