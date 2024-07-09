@@ -1,5 +1,5 @@
 # FacturaProducto
-## `GET` /productoFactura/listarTipoComprobante
+## <mark style="background: #BBFABBA6;">GET</mark> /productoFactura/listarTipoComprobante
 
 >Lista los tipos de comprobante con su id
 
