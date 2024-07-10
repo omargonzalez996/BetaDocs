@@ -639,6 +639,7 @@ No Body
 {
 	cantidad: num,
 	color_id: id,
+	clave: 1234,
 	imei: [
 		imei,
 		imei,
